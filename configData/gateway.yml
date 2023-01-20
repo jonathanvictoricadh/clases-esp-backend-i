@@ -1,0 +1,39 @@
+server:
+  port: ${PORT:${SERVER_PORT:8080}}
+
+spring:
+  application:
+    name: gateway
+  cloud:    
+    gateway:      
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: msstudent
+          uri: lb://api-student
+          predicates:
+            - Path=/api/v1/students/**
+        - id: mscourse
+          uri: lb://api-course
+          predicates:
+            - Path=/api/v1/courses/**
+
+info:
+  app:
+    name: ${spring.application.name}
+
+eureka:
+   client:
+      registerWithEureka: false
+      fetchRegistry: true
+      serviceURL:
+         defaultZone: http://localhost:8761/eureka
+management:
+   endpoint:
+      gateway:
+         enabled: true
+   endpoints:
+      web:
+         exposure:
+            include: gateway

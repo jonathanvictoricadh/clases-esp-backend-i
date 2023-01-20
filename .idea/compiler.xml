@@ -11,6 +11,7 @@
         <module name="eurekaServer" />
         <module name="api-student" />
         <module name="configServer" />
+        <module name="gateway" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -18,6 +19,7 @@
       <module name="api-student" target="17" />
       <module name="configServer" target="17" />
       <module name="eurekaServer" target="17" />
+      <module name="gateway" target="17" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -26,6 +28,7 @@
       <module name="api-student" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
+      <module name="gateway" options="-parameters" />
     </option>
   </component>
 </project>
