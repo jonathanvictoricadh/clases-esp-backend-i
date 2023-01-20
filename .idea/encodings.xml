@@ -5,6 +5,8 @@
     <file url="file://$PROJECT_DIR$/api-course/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-student/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-student/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configServer/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/configServer/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eurekaServer/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eurekaServer/src/main/resources" charset="UTF-8" />
   </component>

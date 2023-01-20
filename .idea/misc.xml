@@ -6,6 +6,7 @@
         <option value="$PROJECT_DIR$/api-course/pom.xml" />
         <option value="$PROJECT_DIR$/api-student/pom.xml" />
         <option value="$PROJECT_DIR$/eurekaServer/pom.xml" />
+        <option value="$PROJECT_DIR$/configServer/pom.xml" />
       </list>
     </option>
   </component>
