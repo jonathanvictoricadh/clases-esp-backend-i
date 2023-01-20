@@ -18,6 +18,8 @@ info:
      name: api-student
     
 eureka:
+  healthcheck:
+    enabled: true
   instance:
     hostname: localhost
     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
