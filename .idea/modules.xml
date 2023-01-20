@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/api-course/api-course.iml" filepath="$PROJECT_DIR$/api-course/api-course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-student/api-student.iml" filepath="$PROJECT_DIR$/api-student/api-student.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/clases-esp-backend-i.iml" filepath="$PROJECT_DIR$/.idea/clases-esp-backend-i.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaServer/eurekaServer.iml" filepath="$PROJECT_DIR$/eurekaServer/eurekaServer.iml" />
+    </modules>
+  </component>
+</project>
