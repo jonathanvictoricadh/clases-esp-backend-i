@@ -9,6 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/jonathanvictoricadh/clases-esp-backend-i
-          default-label: clase-2-ConfigServer
+          default-label: clase-3-FeignLoadBalance
           force-pull: true
           search-paths: configData
