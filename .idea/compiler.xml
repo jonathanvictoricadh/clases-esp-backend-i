@@ -9,9 +9,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="api-course" />
         <module name="eurekaServer" />
-        <module name="api-student" />
-        <module name="configServer" />
         <module name="gateway" />
+        <module name="configServer" />
+        <module name="api-student" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
