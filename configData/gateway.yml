@@ -18,6 +18,10 @@ spring:
           uri: lb://api-course
           predicates:
             - Path=/api/v1/courses/**
+        - id: msinscription
+          uri: lb://api-inscription
+          predicates:
+            - Path=/api/v1/inscription/**
 
 info:
   app:
