@@ -4,6 +4,8 @@ import com.dh.course.client.CourseFeign;
 import com.dh.course.client.StudentFeign;
 import com.dh.course.model.Inscription;
 import com.dh.course.repository.InscriptionRepository;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -24,8 +26,8 @@ public class InscriptionService {
     }
 
     public void create(Long studentId, Long courseId, BigDecimal tuitionAmount, LocalDate startInscription, LocalDate endInscription) {
-        var student = studentFeign.getById(studentId);
-        var course = courseFeign.getById(courseId);
+        StudentFeign.Student student = findStudent(studentId);
+        CourseFeign.Course course = findCourse(courseId);
         Inscription inscription = new Inscription();
         inscription.setId(UUID.randomUUID().toString());
         inscription.setEndInscription(endInscription);
@@ -34,5 +36,25 @@ public class InscriptionService {
         inscription.setCourse(new Inscription.Course(course.getCourseId(), course.getName()));
         inscription.setStudent(new Inscription.Student(student.getStudentId(), student.getName(), student.getLastName()));
         inscriptionRepository.save(inscription);
+    }
+    @Retry(name = "retryInscription")
+    @CircuitBreaker(name = "clientInscription", fallbackMethod = "findCourseFallBack")
+    private CourseFeign.Course findCourse(Long courseId) {
+        var course = courseFeign.getById(courseId);
+        return course;
+    }
+
+    public CourseFeign.Course findCourseFallBack(Long courseId, Throwable t) throws Exception {
+        throw new Exception("Not found Course");
+    }
+    @Retry(name = "retryInscription")
+    @CircuitBreaker(name = "clientInscription", fallbackMethod = "findStudentFallBack")
+    private StudentFeign.Student findStudent(Long studentId) {
+        var student = studentFeign.getById(studentId);
+        return student;
+    }
+
+    public StudentFeign.Student findStudentFallBack(Long studentId, Throwable t) throws Exception {
+        throw new Exception("Not found Student");
     }
 }
