@@ -19,9 +19,9 @@ spring:
           predicates:
             - Path=/api/v1/courses/**
         - id: msinscription
-            uri: lb://api-inscription
-            predicates:
-              - Path=/api/v1/inscription/**
+          uri: lb://api-inscription
+          predicates:
+            - Path=/api/v1/inscription/**
 
 info:
   app:
