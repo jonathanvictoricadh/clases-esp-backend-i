@@ -9,6 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/jonathanvictoricadh/clases-esp-backend-i
-          default-label: clase-6-noSQL
+          default-label: clase-7-circuitBreak
           force-pull: true
           search-paths: configData
