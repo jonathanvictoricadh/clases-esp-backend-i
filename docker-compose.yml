@@ -15,4 +15,31 @@ services:
       # Opens port 3306 on the container
       - '3306'
       # Where our data will be persisted
-   
+  mongo-container:
+    image: mongo
+    container_name: mongo-container
+    restart: on-failure
+    environment:
+      MONGO_INITDB_DATABASE: 'inscription-dev-mongo'
+      MONGO_INITDB_ROOT_USERNAME: 'usr-inscription-mongo'
+      MONGO_INITDB_ROOT_PASSWORD: 'pwd-inscription-mongo'
+    ports:
+      - 27017:27017
+    expose:
+      - 27017
+    volumes:
+      - ./mongo-init.js:/docker-entrypoint-initdb.d/mongo-init.js:ro
+  zipkin-server-container:
+    image: openzipkin/zipkin-slim
+    container_name: zipkin-server-container
+    environment:
+      - STORAGE_TYPE=mem
+    ports:
+      - "9411:9411"
+    expose:
+      - 9411
+    depends_on:
+      - storage-aux-container
+  storage-aux-container:
+      image: busybox:1.31.0
+      container_name: storage-aux-container
