@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/api-course/api-course.iml" filepath="$PROJECT_DIR$/api-course/api-course.iml" />
+      <module fileurl="file://$PROJECT_DIR$/api-inscription/api-inscription.iml" filepath="$PROJECT_DIR$/api-inscription/api-inscription.iml" />
       <module fileurl="file://$PROJECT_DIR$/api-student/api-student.iml" filepath="$PROJECT_DIR$/api-student/api-student.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/clases-esp-backend-i.iml" filepath="$PROJECT_DIR$/.idea/clases-esp-backend-i.iml" />
       <module fileurl="file://$PROJECT_DIR$/configServer/configServer.iml" filepath="$PROJECT_DIR$/configServer/configServer.iml" />

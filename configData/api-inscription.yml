@@ -1,0 +1,32 @@
+server:
+  port: ${PORT:${SERVER_PORT:0}}
+spring:
+  application:
+    name: api-inscription
+  data:
+    mongodb:
+      username: usr-inscription-mongo
+      password: pwd-inscription-mongo
+      database: inscription-dev-mongo
+      port: 27017
+      host: localhost
+  jpa:
+    hibernate.ddl-auto: update
+    generate-ddl: true
+    show-sql: true
+
+info:
+  application:
+    name: api-inscription
+
+eureka:
+   healthcheck:
+     enabled: true
+   instance:
+     hostname: localhost
+     instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+   client:
+      registerWithEureka: true
+      fetchRegistry: true
+      serviceUrl:
+        defaultZone: http://localhost:8761/eureka/

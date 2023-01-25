@@ -3,6 +3,8 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/api-course/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-course/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api-inscription/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/api-inscription/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-student/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/api-student/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/configServer/src/main/java" charset="UTF-8" />

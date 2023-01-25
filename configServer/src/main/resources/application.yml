@@ -9,6 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/jonathanvictoricadh/clases-esp-backend-i
-          default-label: clase-4-ApiGateway
+          default-label: clase-6-noSQL
           force-pull: true
           search-paths: configData

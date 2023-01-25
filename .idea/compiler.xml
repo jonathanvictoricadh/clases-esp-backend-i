@@ -7,6 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="api-inscription" />
         <module name="api-course" />
         <module name="eurekaServer" />
         <module name="api-student" />
@@ -16,6 +17,8 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="api-course" target="17" />
+      <module name="api-course (1)" target="17" />
+      <module name="api-inscription" target="17" />
       <module name="api-student" target="17" />
       <module name="configServer" target="17" />
       <module name="eurekaServer" target="17" />
@@ -25,6 +28,8 @@
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-course" options="-parameters" />
+      <module name="api-course (1)" options="-parameters" />
+      <module name="api-inscription" options="-parameters" />
       <module name="api-student" options="-parameters" />
       <module name="configServer" options="-parameters" />
       <module name="eurekaServer" options="-parameters" />
