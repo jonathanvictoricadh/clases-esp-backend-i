@@ -1,5 +1,5 @@
 server:
-  port: ${PORT:${SERVER_PORT:0}}
+  port: 0
 spring:
   application:
     name: api-inscription
