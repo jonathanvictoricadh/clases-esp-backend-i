@@ -1,5 +1,6 @@
 package com.dh.course.controller;
 
+import com.dh.course.event.FinalizarCursoEventProducer;
 import com.dh.course.model.Course;
 import com.dh.course.service.CourseService;
 import lombok.Getter;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Controller
@@ -17,8 +19,11 @@ public class CourseController {
 
     private final CourseService courseService;
 
-    public CourseController(CourseService courseService) {
+    private final FinalizarCursoEventProducer finalizarCursoEventProducer;
+
+    public CourseController(CourseService courseService, FinalizarCursoEventProducer finalizarCursoEventProducer) {
         this.courseService = courseService;
+        this.finalizarCursoEventProducer = finalizarCursoEventProducer;
     }
 
     @PostMapping
@@ -33,6 +38,14 @@ public class CourseController {
     public ResponseEntity update(@RequestBody Course course) {
         courseService.update(course);
         return ResponseEntity.ok().build();
+    }
+
+
+
+    @PatchMapping("/finalizarCurso")
+    @ResponseStatus(code = HttpStatus.OK)
+    public void finalizarCurso(){
+        finalizarCursoEventProducer.publishFinalizarCursoEvent(new FinalizarCursoEventProducer.Data("Esp Back I", LocalDate.now(),10, "Felices Pascuas" ));
     }
 
 

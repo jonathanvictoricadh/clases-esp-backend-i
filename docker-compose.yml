@@ -43,3 +43,13 @@ services:
   storage-aux-container:
       image: busybox:1.31.0
       container_name: storage-aux-container
+  rabbitmq-container:
+    image: rabbitmq:3-management
+    container_name: rabbitmq-container
+    hostname: localhost
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    expose:
+      - 15672
+      - 5672

@@ -3,6 +3,11 @@ server:
 spring:
   application:
     name: api-student
+  rabbitmq:
+    username: guest
+    password: guest
+    host: localhost
+    port: 5672
   zipkin:
     baseUrl: http://localhost:9411/
   datasource:

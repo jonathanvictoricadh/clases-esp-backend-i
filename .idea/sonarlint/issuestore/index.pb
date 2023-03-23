@@ -7,8 +7,6 @@ o
 ?api-course/src/main/java/com/dh/course/client/StudentFeign.java,5\b\5bee80ef450cdb76bcb273a482d40325e299a998
 l
 <gateway/src/main/java/com/dh/gateway/GatewayApplication.java,3\d\3d683eaa371033d42dc1785f2c789fc1ee69ba5c
-w
-Gapi-course/src/main/java/com/dh/course/controller/CourseController.java,f\6\f6068255484f84fb43bc872ac602e25deffe93c5
 h
 8api-course/src/main/java/com/dh/course/model/Course.java,6\8\683d053e4d1ecc0302c232f62f1439f7e70061ba
 
@@ -21,14 +19,6 @@ t
 Dapi-inscription/src/main/java/com/dh/course/client/StudentFeign.java,e\0\e05d3a265b176b0d20eee04370c43749d6ad0a54
 r
 Bapi-inscription/src/main/java/com/dh/course/model/Inscription.java,a\c\acfeb03829167b2ad65e9522af4afda0bdd42898
-C
-api-student/pom.xml,0\4\04a8fcae49438b1459fc96cc9824d9b2185fbf1f
-B
-api-course/pom.xml,c\0\c07778c42264abe0588536afd759224a51ba176a
-J
-configData/api-student.yml,5\b\5b772c81aa06fc6f41875e124ebba72bc13684b7
-I
-configData/api-course.yml,f\2\f2c05e55cec5182b17c88df237a0fd08539beb88
 N
 configData/api-inscription.yml,1\9\19820aec9c93c9b91bdfd04fba515794296f6690
 
@@ -39,7 +29,5 @@ G
 Kapi-inscription/src/main/java/com/dh/course/service/InscriptionService.java,f\6\f69f335ae1ab02b056fd39200147207f2edd4dec
 s
 Capi-inscription/src/main/java/com/dh/course/client/CourseFeign.java,f\f\ff94fff4cc2110580c581b3afe6caaccf7efec09
-B
-docker-compose.yml,3\5\35b8c13cf2eb2a194eada000eb310d65aed53b2a
 F
 configData/gateway.yml,9\1\9105884a137d9a78beafdfed360139b19d73208f
