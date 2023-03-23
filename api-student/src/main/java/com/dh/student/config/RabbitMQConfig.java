@@ -1,6 +1,6 @@
 package com.dh.student.config;
 
-import com.rabbitmq.client.ConnectionFactory;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;

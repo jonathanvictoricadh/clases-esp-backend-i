@@ -45,7 +45,7 @@ public class CourseController {
     @PatchMapping("/finalizarCurso")
     @ResponseStatus(code = HttpStatus.OK)
     public void finalizarCurso(){
-        finalizarCursoEventProducer.publishFinalizarCursoEvent(new FinalizarCursoEventProducer.Data("Esp Back I", LocalDate.now(),10, "Felices Pascuas" ));
+        finalizarCursoEventProducer.publishFinalizarCursoEvent(new FinalizarCursoEventProducer.Data("Esp Back I",10, "Felices Pascuas" ));
     }
 
 

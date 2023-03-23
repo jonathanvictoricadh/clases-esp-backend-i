@@ -28,7 +28,6 @@ public class FinalizarCursoEventConsumer {
     @Setter
     public static class Data{
         private String nombreCurso;
-        private LocalDate fecha;
         private int nota;
         private String saludo;
     }

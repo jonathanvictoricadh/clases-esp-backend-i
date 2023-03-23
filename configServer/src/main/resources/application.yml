@@ -9,6 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/jonathanvictoricadh/clases-esp-backend-i
-          default-label: clase-8-zipkin
+          default-label: clase-9-rabbitmq
           force-pull: true
           search-paths: configData
