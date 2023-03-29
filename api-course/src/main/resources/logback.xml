@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} | %-5p | [%thread] %logger{5}:%L - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE"
+              class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${user.dir}/logs/api-artico.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{yyyy-MM-dd HH:mm:ss} | %-5p | [%thread] %logger{5}:%L - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${user.dir}/logs/api-artico.%d{yyyy-MM-dd}.log.zip</fileNamePattern>
+            <maxHistory>14</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <springProperty scope="context" name="ACTIVE_PROFILE" source="spring.profiles.active"/>
+<!--     <include resource="org/springframework/boot/logging/logback/base.xml" />-->
+<!--    <property name="resources" value="classpath:application.yml"/>-->
+
+<!--     <property name="resources" value="classpath:application-dev.yml"/>-->
+
+
+
+<!--    <springProperty name = "appEnviroment" source= "application-dev.yml.app.environment"/>-->
+
+    <if condition='"${ACTIVE_PROFILE}".contains("dev") &amp;&amp; !"${ACTIVE_PROFILE}".contains("local")'>
+        <then>
+            <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <destination>logstash-dev-service.default.svc.cluster.local:4560</destination>
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                    <customFields>
+                        {"appName":"api-artico-dev"}
+                    </customFields>
+                </encoder>
+            </appender>
+            <root level="DEBUG">
+                <appender-ref ref="stash" />
+            </root>
+        </then>
+    </if>
+
+    <if condition='"${ACTIVE_PROFILE}".contains("qa") &amp;&amp; !"${ACTIVE_PROFILE}".contains("local")'>
+        <then>
+            <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <destination>logstash-dev-service.default.svc.cluster.local:4560</destination>
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                    <customFields>
+                        {"appName":"api-artico-qa"}
+                    </customFields>
+                </encoder>
+            </appender>
+            <root level="DEBUG">
+                <appender-ref ref="stash"/>
+            </root>
+        </then>
+    </if>
+
+    <if condition='"${ACTIVE_PROFILE}".contains("prod") &amp;&amp; !"${ACTIVE_PROFILE}".contains("local")'>
+        <then>
+            <appender name="stash" class="net.logstash.logback.appender.LogstashTcpSocketAppender">
+                <destination>logstash-prod-service.default.svc.cluster.local:4560</destination>
+
+                <encoder class="net.logstash.logback.encoder.LogstashEncoder">
+                    <customFields>
+                        {"appName":"api-artico-prod"}
+                    </customFields>
+                </encoder>
+            </appender>
+            <root level="DEBUG">
+                <appender-ref ref="stash"/>
+            </root>
+        </then>
+    </if>
+
+    <root level="info">
+        <appender-ref ref="STDOUT"/>
+        <appender-ref ref="FILE"/>
+    </root>
+
+    <logger name="org.springframework.security" level="INFO"/>
+    <logger name="org.hibernate.type" level="INFO"/>
+    <logger name="org.hibernate" level="INFO"/>
+    <logger name="com.avla.artico.App" level="INFO"/>
+    <logger name="org.springframework.web.filter.CommonsRequestLoggingFilter">
+        <level value="DEBUG"/>
+    </logger>
+    <logger name="com.avla.artico.utils.OnlyPathRequestLoggingFilter">
+        <level value="DEBUG" />
+    </logger>
+    <logger name="com.avla.artico.utils.ExecutionTimeRequestLoggingFilter">
+        <level value="DEBUG" />
+    </logger>
+</configuration>

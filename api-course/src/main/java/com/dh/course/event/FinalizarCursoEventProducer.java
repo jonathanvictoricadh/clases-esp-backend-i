@@ -21,7 +21,9 @@ public class FinalizarCursoEventProducer {
 
 
     public void publishFinalizarCursoEvent(FinalizarCursoEventProducer.Data message){
+
         rabbitTemplate.convertAndSend(RabbitMQConfig.EXCHANGE_NAME,RabbitMQConfig.TOPIC_CURSO_FINALIZADO,message);
+
     }
 
     @AllArgsConstructor

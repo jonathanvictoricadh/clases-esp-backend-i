@@ -4,12 +4,15 @@ import com.dh.course.client.StudentFeign;
 import com.dh.course.model.Course;
 import com.dh.course.model.CourseStudent;
 import com.dh.course.repository.CourseRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 @Service
+@Slf4j
 public class CourseService {
+
 
     private final CourseRepository courseRepository;
 
@@ -21,7 +24,7 @@ public class CourseService {
     }
 
     public void save(Course course) {
-        courseRepository.save(course);
+       courseRepository.save(course);
     }
 
 

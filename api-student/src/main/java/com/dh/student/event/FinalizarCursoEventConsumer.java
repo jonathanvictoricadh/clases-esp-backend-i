@@ -6,18 +6,20 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 
 @Component
+@Slf4j
 public class FinalizarCursoEventConsumer {
 
 
     @RabbitListener(queues = RabbitMQConfig.QUEUE_CURSO_FINALIZADO)
     public void listen(FinalizarCursoEventConsumer.Data message){
-        System.out.print("NOMBRE DE CURSO "+ message.nombreCurso);
+       log.info("NOMBRE DE CURSO "+ message.nombreCurso);
         //procesamiento
     }
 
