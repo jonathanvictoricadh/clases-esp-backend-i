@@ -91,6 +91,7 @@
     </dependencyManagement>
 
     <build>
+        <finalName>api-course</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>

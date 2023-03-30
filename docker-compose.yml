@@ -53,3 +53,21 @@ services:
     expose:
       - 15672
       - 5672
+  config-server-container:
+    build: configServer
+    container_name: config-server-container
+    restart: on-failure
+    ports:
+      - "8888:8888"
+    expose:
+      - '8888'
+  eureka-server-container:
+    build: eurekaServer
+    container_name: eureka-server-container
+    restart: on-failure
+    ports:
+      - "8761:8761"
+    expose:
+      - '8761'
+    links:
+      - config-server-container
