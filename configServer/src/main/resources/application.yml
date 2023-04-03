@@ -9,6 +9,6 @@ spring:
       server:
         git:
           uri: https://github.com/jonathanvictoricadh/clases-esp-backend-i
-          default-label: clase-9-rabbitmq
+          default-label: clase-10-testing
           force-pull: true
           search-paths: configData

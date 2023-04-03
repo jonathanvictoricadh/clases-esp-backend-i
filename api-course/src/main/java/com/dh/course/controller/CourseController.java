@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/api/v1/courses")
@@ -27,10 +28,9 @@ public class CourseController {
     }
 
     @PostMapping
-    @ResponseStatus(code = HttpStatus.CREATED)
-    public ResponseEntity<Long> create(@RequestBody Course course) {
+    public ResponseEntity<Map<String,Object>> create(@RequestBody Course course) {
         courseService.save(course);
-        return ResponseEntity.ok(course.getCourseId());
+        return ResponseEntity.ok( Map.of("id",course.getCourseId()));
     }
 
     @PutMapping

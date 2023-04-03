@@ -8,10 +8,10 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @SpringBootApplication
 @EnableMongoRepositories
 @EnableFeignClients
-public class ApiCourseApplication {
+public class ApiInscriptionApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ApiCourseApplication.class, args);
+        SpringApplication.run(ApiInscriptionApplication.class, args);
     }
 
 

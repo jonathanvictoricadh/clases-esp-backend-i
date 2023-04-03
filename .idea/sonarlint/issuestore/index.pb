@@ -1,20 +1,10 @@
 
 z
 Japi-student/src/main/java/com/dh.student/controller/StudentController.java,a\a\aac70af51aa2d541b0a0c1ebb2b2cd7b2d1ef5f2
-?
-gateway/pom.xml,4\b\4b316bc60d1cfae51045f6fc8e58a8ae31f03ff3
 o
 ?api-course/src/main/java/com/dh/course/client/StudentFeign.java,5\b\5bee80ef450cdb76bcb273a482d40325e299a998
-l
-<gateway/src/main/java/com/dh/gateway/GatewayApplication.java,3\d\3d683eaa371033d42dc1785f2c789fc1ee69ba5c
-h
-8api-course/src/main/java/com/dh/course/model/Course.java,6\8\683d053e4d1ecc0302c232f62f1439f7e70061ba
 
 Qapi-inscription/src/main/java/com/dh/course/repository/InscriptionRepository.java,f\8\f87f4e85a97bc370982558c1e65846bcba604702
-u
-Eapi-inscription/src/main/java/com/dh/course/ApiCourseApplication.java,0\3\03da7f571cc25aba6d5a9e864103029b9bc299c0
-{
-KconfigServer/src/main/java/com/dh/configserver/ConfigServerApplication.java,8\f\8f3de8386626d5099f55b33bc56652dae415b431
 t
 Dapi-inscription/src/main/java/com/dh/course/client/StudentFeign.java,e\0\e05d3a265b176b0d20eee04370c43749d6ad0a54
 r
@@ -23,8 +13,6 @@ N
 configData/api-inscription.yml,1\9\19820aec9c93c9b91bdfd04fba515794296f6690
 
 Qapi-inscription/src/main/java/com/dh/course/controller/InscriptionController.java,5\1\514aee1319ec2e1fc2ef1f9c69b38ea3a91702ac
-G
-api-inscription/pom.xml,3\3\33eb9d19d81ef9bdd662c373685a729bb28106b8
 {
 Kapi-inscription/src/main/java/com/dh/course/service/InscriptionService.java,f\6\f69f335ae1ab02b056fd39200147207f2edd4dec
 s
