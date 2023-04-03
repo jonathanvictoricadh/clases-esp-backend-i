@@ -33,25 +33,39 @@ eureka:
 
 
 
-resilience4j.retry:
-  instances:
-    retryInscription:
-      maxAttempts: 3
-      waitDuration: 10s
-      enableExponentialBackoff: true
-      exponentialBackoffMultiplier: 2
-      retryExceptions:
-        - org.springframework.web.client.HttpServerErrorException
-        - java.io.IOException
 
-resilience4j.circuitbreaker:
-  instances:
-    clientInscription:
-      registerHealthIndicator: true
-      slidingWindowSize: 10
-      permittedNumberOfCallsInHalfOpenState: 3
-      slidingWindowType: TIME_BASED
-      minimumNumberOfCalls: 20
-      waitDurationInOpenState: 50s
-      failureRateThreshold: 50
-      eventConsumerBufferSize: 10
+
+
+resilience4j:
+  retry:
+    configs:
+      default:
+        max-retry-attempts: 3
+        wait-duration: 1s
+        retry-exceptions:
+          - java.io.IOException
+          - java.net.SocketTimeoutException
+      instances:
+        retryInscription:
+          base-config: default
+          max-retry-attempts: 5
+          wait-duration: 2s
+          retry-exceptions:
+            - java.net.ConnectException
+  circuitbreaker:
+    configs:
+      default:
+        register-health-indicator: true
+        sliding-window-size: 10
+        minimum-number-of-calls: 5
+        permitted-number-of-calls-in-half-open-state: 3
+        wait-duration-in-open-state: 30s
+        automatic-transition-from-open-to-half-open-enabled: true
+        failure-rate-threshold: 50
+    instances:
+      clientInscription:
+        base-config: default
+        sliding-window-type: COUNT_BASED
+        sliding-window-size: 5
+        wait-duration-in-open-state: 1m
+        failure-rate-threshold: 20
