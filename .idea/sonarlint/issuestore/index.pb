@@ -1,8 +1,6 @@
 
 z
 Japi-student/src/main/java/com/dh.student/controller/StudentController.java,a\a\aac70af51aa2d541b0a0c1ebb2b2cd7b2d1ef5f2
-o
-?api-course/src/main/java/com/dh/course/client/StudentFeign.java,5\b\5bee80ef450cdb76bcb273a482d40325e299a998
 Å
 Qapi-inscription/src/main/java/com/dh/course/repository/InscriptionRepository.java,f\8\f87f4e85a97bc370982558c1e65846bcba604702
 t

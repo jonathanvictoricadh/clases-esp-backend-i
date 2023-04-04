@@ -1,5 +1,6 @@
 package com.dh.course.client;
 
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.cloud.openfeign.FeignClient;
@@ -14,6 +15,7 @@ public interface StudentFeign {
 
     @Getter
     @Setter
+    @AllArgsConstructor
     class Student {
         private Long studentId;
         private String name;

@@ -8,6 +8,7 @@ import io.restassured.http.ContentType;
 import org.junit.BeforeClass;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
@@ -22,13 +23,15 @@ class CourseControllerTest {
 
 
     @Test
-    void create() {
+    void create() throws InterruptedException {
        var responseId= given()
                 .contentType(ContentType.JSON)
                 .when()
                 .body(new Course(null,"Esp. Back",null))
                 .post("/api/v1/courses")
                 .as(Map.class)              ;
+
+        TimeUnit.SECONDS.sleep(1);
 
 
         given()
