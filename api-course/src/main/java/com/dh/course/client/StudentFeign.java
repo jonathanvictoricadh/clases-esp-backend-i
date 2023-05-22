@@ -1,6 +1,5 @@
 package com.dh.course.client;
 
-import com.dh.course.config.CustomLoadBalancerConfiguration;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient;
@@ -9,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @FeignClient(name = "api-student")
-@LoadBalancerClient(value = "stores", configuration = LoadBalancerConfiguration.class)
+@LoadBalancerClient(value = "stores", configuration = com.dh.course.config.LoadBalanceConfiguration.class)
 public interface StudentFeign {
 
     @GetMapping("/api/v1/students/{id}")

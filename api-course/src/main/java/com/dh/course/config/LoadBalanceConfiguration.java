@@ -1,4 +1,4 @@
-package com.dh.course.configuration;
+package com.dh.course.config;
 
 
 import org.springframework.cloud.client.ServiceInstance;
