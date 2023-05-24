@@ -1,0 +1,9 @@
+
+###
+PATCH http://localhost:52132/api/v1/courses/addStudent
+Content-Type: application/json
+
+{
+  "courseId": 3,
+  "studentId": 11
+}
