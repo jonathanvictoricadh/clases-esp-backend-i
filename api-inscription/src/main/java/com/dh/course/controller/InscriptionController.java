@@ -27,6 +27,9 @@ public class InscriptionController {
     @ResponseStatus(code = HttpStatus.CREATED)
     public void create(@RequestBody InscriptionCreationRequest request) {
         inscriptionService.create(request.studentId, request.courseId, request.tuitionAmount, request.startInscription, request.endInscription);
+
+
+
     }
 
 

@@ -6,6 +6,8 @@ import com.dh.course.model.Inscription;
 import com.dh.course.repository.InscriptionRepository;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import io.github.resilience4j.retry.annotation.Retry;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Lazy;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -19,6 +21,11 @@ public class InscriptionService {
     private final StudentFeign studentFeign;
     private final InscriptionRepository inscriptionRepository;
 
+
+    @Autowired
+    @Lazy
+    private InscriptionService self;
+
     public InscriptionService(CourseFeign courseFeign, StudentFeign studentFeign, InscriptionRepository inscriptionRepository) {
         this.courseFeign = courseFeign;
         this.studentFeign = studentFeign;
@@ -26,8 +33,8 @@ public class InscriptionService {
     }
 
     public void create(Long studentId, Long courseId, BigDecimal tuitionAmount, LocalDate startInscription, LocalDate endInscription) {
-        StudentFeign.Student student = findStudent(studentId);
-        CourseFeign.Course course = findCourse(courseId);
+        StudentFeign.Student student = self.findStudent(studentId);
+        CourseFeign.Course course =  self.findCourse(courseId);
         Inscription inscription = new Inscription();
         inscription.setId(UUID.randomUUID().toString());
         inscription.setEndInscription(endInscription);
